@@ -26,6 +26,9 @@ xhttp.onreadystatechange = function(){
             city1 = document.getElementById("city1");
             city1.setAttribute("style", "background-color: floralwhite");
             $(city1).load(url+requested_city+apikey);
+            for(let i = 0; i<4; i++){
+                document.getElementById(i).remove();
+            }
             
         }        
     }
@@ -33,9 +36,9 @@ xhttp.onreadystatechange = function(){
 
 function randomCity(){
     let min=0; 
-    let max=4;  
+    let max=11;  
     let random = Math.floor(Math.random() * (+max - +min)) + +min;
-    let cityList = ['London', 'Paris', 'Tokyo', 'Vienna', 'Boston'];
+    let cityList = ['London', 'Paris', 'Tokyo', 'Vienna', 'Boston', "Lahore", "Delhi", "Beijing", "Seoul", "Venice", "Rome", "Cairo"];
     return cityList[random];
 };
 
