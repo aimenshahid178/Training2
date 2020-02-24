@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<meta http-equiv="refresh" content="5; URL=http://127.0.0.1:5500//index.html">-->
     <title>Weather Forecast</title>
     <link rel="stylesheet" href="index.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -11,25 +10,16 @@
     src="http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=9792f6c0368ca4a2fcb787b7e9f9b922&mode=html">
 </script>
 </head>
-<body onload="Nothing();">
+<body onload="displayAll();">
     <h1><center>Simple Weather App</center></h1>
     <center><input id="city" placeholder="Search for a city" type="text" onfocus="this.value=''">
-    <button type="button" onclick="cityRequest(document.getElementById('city').value)">SUBMIT</button></center>
+    <button type="button" onclick="cityRequest(document.getElementById('city').value)">SUBMIT</button>
+<button type="button" onclick="displayAll()">CLEAR ALL</button></center>
     
     <div class="wrapper">
         <div id="city1" class="data"></div>
-        <!--<div id="city2" class="data"></div>
-        <div id="city3" class="data"></div>
-        <div id="city4" class="data"></div>
-        <div id="city5" class="data"></div>-->
     </div>
     <script type="text/javascript" src="index.js"></script>
-    <!--
-    <script>
-        function some_function(){
-            $("#city1").load("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=9792f6c0368ca4a2fcb787b7e9f9b922&mode=html");
-        }
-    </script> -->
 
 </body>
 </html>

@@ -1,11 +1,17 @@
-var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
+const url = 'http://api.openweathermap.org/data/2.5/weather?q=';
 const apikey = '&mode=html&appid=9792f6c0368ca4a2fcb787b7e9f9b922';
 let requested_city;
 let randomcity;
 
-setTimeout(function(){
+setInterval(function(){
     if(requested_city == undefined){
-    window.location.reload(1);
+        for(let i = 0; i<4; i++){
+            randomcity = randomCity();
+            xhttp.open("GET", url+randomcity+apikey, true);
+            xhttp.send();
+            city = document.getElementById(i);
+            $(city).load(url+randomcity+apikey);
+        }
     }
  }, 5000);
 
@@ -42,7 +48,8 @@ function randomCity(){
     return cityList[random];
 };
 
-function Nothing(){
+function displayAll(){
+    requested_city = undefined;
     randomcity = randomCity();
     console.log(randomcity);
     city1 = document.getElementById("city1");
